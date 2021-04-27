@@ -40,12 +40,11 @@ class CategoryProduct extends Controller
         $this->AuthLogin();
         $data = array();
         $data['category_name'] = $request->category_product_name;
-        $data['category_product_keywords'] = $request->meta_keywords;
         $data['category_desc'] = $request->category_product_desc;
         $data['category_status'] = $request->category_product_status;
 
         DB::table('tbl_category_product')->insert($data);
-        Session::put('message','Them Danh Muc Thanh cong' );
+        Session::put('message','Add Category Successfully' );
         return Redirect::to('add-category-product');
 
         
@@ -54,7 +53,7 @@ class CategoryProduct extends Controller
         $this->AuthLogin();
 
         DB::table('tbl_category_product')->where('category_id',$category_product_id)->update(['category_status'=>1]);
-        Session::put('message',' Khong kich hoat  Danh Muc Thanh cong' );
+        Session::put('message',' Do not activate the Product Category' );
         return Redirect::to('all-category-product');
 
 
@@ -64,7 +63,7 @@ class CategoryProduct extends Controller
         $this->AuthLogin();
 
         DB::table('tbl_category_product')->where('category_id',$category_product_id)->update(['category_status'=>0]);
-        Session::put('message','  kich hoat  Danh Muc Thanh cong' );
+        Session::put('message','  Successful Product category activation' );
         return Redirect::to('all-category-product');
 
 
@@ -84,7 +83,7 @@ class CategoryProduct extends Controller
         $data['category_name'] = $request->category_product_name;
         $data['category_desc'] = $request->category_product_desc;
         DB::table('tbl_category_product')->where('category_id',$category_product_id)->update($data);
-        Session::put('message',' Cap Nhat  Danh Muc Thanh cong' );
+        Session::put('message',' Category Product Updated Successful' );
         return Redirect::to('all-category-product');
         $data['meta_keywords'] = $request->category_product_keywords;
     }
@@ -105,17 +104,10 @@ class CategoryProduct extends Controller
         $brand_product = DB::table('tbl_brand')->where('brand_status','0')->orderby('brand_id', 'desc')->get();
         $category_by_id = DB::table('tbl_product')->join('tbl_category_product','tbl_product.category_id','=',
         'tbl_category_product.category_id')->where('tbl_product.category_id',$category_id)->get();
-        foreach($category_by_id as $key => $val)
-        {
-        $meta_desc= $val->category_desc;
-        $meta_keywords = $val->meta_keywords;
-        $meta_title = $val->category_name;
-        $url = $request->url();
-
-        }
+       
         $category_name = DB::table('tbl_category_product')->where('tbl_category_product.category_id',$category_id)->limit(1)->get();
         return view('pages.category.show_category')->with('category', $cate_product)->with('brand', $brand_product)->with('category_by_id', $category_by_id)
-        ->with('category_name', $category_name)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url',$url) ;
+        ->with('category_name', $category_name) ;
     }
 
     

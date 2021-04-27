@@ -35,6 +35,10 @@ class HomeController extends Controller
     }
 
     public function search(Request $request){
+        $meta_desc= " Computer Supermarket, Laptop, Computer Accessories, PC Gaming, Gaming Gear, Workstations, Console, Supermarket Equipment";
+        $meta_keywords = " Computer Technology, PC Gaming, pc gaming";
+        $meta_title = "Computer Technology, PC Gaming, pc gaming ";
+        $url = $request->url();
         $keywords = $request->keywords_submit;
         $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id', 'desc')->get();
         $brand_product = DB::table('tbl_brand')->where('brand_status','0')->orderby('brand_id', 'desc')->get();
@@ -43,7 +47,10 @@ class HomeController extends Controller
 
 
 
-        return view('pages.product.search')->with('category', $cate_product)->with('brand', $brand_product)->with('search_product', $search_product);
+        return view('pages.product.search')->with('category', $cate_product)->with('brand', $brand_product)
+        ->with('search_product', $search_product)->with('meta_desc',$meta_desc)
+        ->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)
+        ->with('url',$url) ;;
         
     }
 }

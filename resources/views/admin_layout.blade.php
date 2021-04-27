@@ -123,10 +123,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li class="sub-menu">
 							<a href="javascript:;">
 								<i class="fa fa-book"></i>
-								<span>List Product</span>
+								<span>List Product Category</span>
 							</a>
 							<ul class="sub">
-								<li><a href="{{URL ::to('/add-category-product')}}">Product Category</a></li>
+								<li><a href="{{URL ::to('/add-category-product')}}">Add Product Caegory </a></li>
 								<li><a href="{{URL::to('/all-category-product')}}">List of Category Products</a></li>
 
 							</ul>

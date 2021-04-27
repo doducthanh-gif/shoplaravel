@@ -1,7 +1,6 @@
 @extends('layout')
 @section('content')
 <div class="fb-like" data-href="http://localhost/shopbanhanglaravel/danh-muc-san-pham/22" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
-<div class="fb-share-button" data-href="http://localhost/shopbanhanglaravel" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{$url}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 
 <div class="features_items"><!--features_items-->
 

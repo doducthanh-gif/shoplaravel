@@ -19,17 +19,14 @@
                     <form role="form" action="{{URL::to('/save-category-product')}}" method="post" >
                     {{csrf_field()}} 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Name list</label>
+                            <label for="exampleInputEmail1">Category Name</label>
                             <input type="text" name="category_product_name" class="form-control" id="exampleInputEmail1" placeholder="Ten Danh Muc">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Catalog Description</label>
                             <textarea style=" resize:none" name="category_product_desc" rows=8 class="form-control"   id="exampleInputPassword1" placeholder="Mo ta danh muc"> </textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Category keywords</label>
-                            <textarea style=" resize:none" name="category_product_keywords" rows=8 class="form-control"   id="exampleInputPassword1" placeholder="Mo ta danh muc"> </textarea>
-                        </div>
+            
                         
                         <div class="form-group">
                         <label for="exampleInputPassword1">Display</label>

@@ -48,7 +48,7 @@ class BrandProduct extends Controller
         $brand->brand_desc = $data['brand_product_desc'];
         $brand->brand_status = $data['brand_product_status'];
         $brand->save();
-        Session::put('message', 'Them Danh Muc Thanh cong');
+        Session::put('message', 'Brand Added Successful');
         return Redirect::to('add-brand-product');
     }
     public function unactive_brand_product($brand_product_id)
@@ -56,7 +56,7 @@ class BrandProduct extends Controller
         $this->AuthLogin();
 
         DB::table('tbl_brand')->where('brand_id', $brand_product_id)->update(['brand_status' => 1]);
-        Session::put('message', ' Khong kich hoat  Thuong Hieu Thanh cong');
+        Session::put('message', ' Hide brand success');
         return Redirect::to('all-brand-product');
     }
     public function active_brand_product($brand_product_id)
@@ -64,7 +64,7 @@ class BrandProduct extends Controller
         $this->AuthLogin();
 
         DB::table('tbl_brand')->where('brand_id', $brand_product_id)->update(['brand_status' => 0]);
-        Session::put('message', '  kich hoat  Thuong Hieu Thanh cong');
+        Session::put('message', ' Show brand success');
         return Redirect::to('all-brand-product');
     }
     public function edit_brand_product($brand_product_id)
@@ -84,7 +84,7 @@ class BrandProduct extends Controller
         $brand->brand_name = $data['brand_product_name'];
         $brand->brand_desc = $data['brand_product_desc'];
         $brand->save();
-        Session::put('message', ' Cap Nhat  Thuong Hieu Thanh cong');
+        Session::put('message', ' Successful Brand Update');
         return Redirect::to('all-brand-product');
     }
     public function delete_brand_product($brand_product_id)
@@ -92,7 +92,7 @@ class BrandProduct extends Controller
         $this->AuthLogin();
 
         DB::table('tbl_brand')->where('brand_id', $brand_product_id)->delete();
-        Session::put('message', ' Xoa Thuong Hieu Thanh cong');
+        Session::put('message', ' Delete Brands Successfully');
         return Redirect::to('all-brand-product');
     }
 

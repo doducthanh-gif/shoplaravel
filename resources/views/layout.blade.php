@@ -4,20 +4,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="{{$meta_desc}}">
+	<meta name="description" content="Ting Ting Gaming">
 	<!-- Seo -->
-	<meta name="keywords" content="{{$meta_keywords}}" />
+	<meta name="keywords" content="Ting Ting Gaming" />
 	<meta name="robots" content="Index,Follow" />
 	<meta name="author" content="">
-	<title>{{$meta_title}}</title>
-	<link rel="canonical" href="{{$url}}" />
+	<title>Ting Ting Gaming</title>
+	<link rel="canonical" href="http://localhost/shopbanhanglaravel" />
 	<link rel="icon" type="image/x-icon" href="https://www.thol.com.vn/pub/media/favicon/stores/5/favicon.png" />
 
 
 	<meta property="og:site_name" content="http://localhost/shopbanhanglaravel" />
-	<meta property="og:description" content="{{$meta_desc}}" />
-	<meta property="og:title" content="{{$meta_title}}" />
-	<meta property="og:url" content="{{$url}}" />
+	<meta property="og:description" content="Ting Ting Gaming" />
+	<meta property="og:title" content="Ting Ting Gaming" />
+	<meta property="og:url" content="http://localhost/shopbanhanglaravel" />
 	<meta property="og:type" content="website" />
 
 
@@ -154,7 +154,7 @@
 								$shipping_id = Session::get('shipping_id');
 								if ($customer_id != null && $shipping_id == null) {
 								?>
-									<li class="btn nav-btn animated-linear-gradient">
+									
 
 									<li><a href="{{URL::to('/checkout')}}"> <i class="fa fa-crosshairs"></i> Checkout</a></li>
 
@@ -301,7 +301,7 @@
 				<div class="col-sm-9 padding-right">
 					@yield('content')
 				</div>
-				<div class="fb-comments" data-href="{{$url}}" data-width="" data-numposts="10"></div>
+				<div class="fb-comments" data-href="http://localhost/shopbanhanglaravel" data-width="" data-numposts="10"></div>
 			</div>
 		</div>
 	</section>

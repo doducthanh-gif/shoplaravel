@@ -27,10 +27,7 @@
                             <label for="exampleInputPassword1">Cateogry Description</label>
                             <textarea style=" resize:none"  name="category_product_desc" rows=8 class="form-control"   id="exampleInputPassword1" > {{$edit_value->category_desc}}</textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Category Keywords</label>
-                            <textarea style=" resize:none" name="category_product_keywords" rows=8 class="form-control"   id="exampleInputPassword1" placeholder="Mo ta danh muc">{{$edit_value->meta_keywords}} </textarea>
-                        </div>
+    
     
                         <button type="submit" name="update_category_product" class="btn btn-info">Update</button>
                     </form>
